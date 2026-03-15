@@ -1,0 +1,1 @@
+"""diskspace-digger package."""
