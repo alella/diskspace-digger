@@ -1,0 +1,31 @@
+[tool.pylint.main]
+load-plugins = []
+
+[tool.pylint.messages_control]
+disable = [
+    "C0114",  # missing-module-docstring
+    "C0115",  # missing-class-docstring
+    "C0116",  # missing-function-docstring
+    "W1201",  # ignore logging-not-lazy warning
+    "logging-fstring-interpolation",  # ignore lazy % formatting warning in logging
+    "broad-except",  # ignore catching too general exception Exception
+]
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.reports]
+output-format = "colorized"
+
+[tool.pylint.basic]
+good-names = ["i", "j", "k", "ex", "Run", "_"]
+
+[tool.pytest.ini_options]
+addopts = "--durations=10 --cov=src"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
